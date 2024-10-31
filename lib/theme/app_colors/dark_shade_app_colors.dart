@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DarkShadeAppColors {
-  static const Color backgroundColor = Color(0xFFF8F5F2);
+  static const Color backgroundColor = Color(0xFF000000);
   static const Color lightPinkColor = Color(0xFFFADEDF);
   static const Color themeColor = Color(0xFFE84C4F);
   static const Color goldenYellowColor = Color(0xFFEDA345);

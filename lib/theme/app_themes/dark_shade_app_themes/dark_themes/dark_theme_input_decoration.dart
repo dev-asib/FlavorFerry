@@ -6,7 +6,7 @@ class DarkThemeInputDecoration {
   static InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(
       filled: true,
-      fillColor: DarkShadeAppColors.lightPinkColor,
+      fillColor: DarkShadeAppColors.charcoalBlueColor,
       border: InputDecorationStyle.outlineInputBorder(),
       enabledBorder: InputDecorationStyle.outlineInputBorder(),
       errorBorder: InputDecorationStyle.outlineInputBorder(),

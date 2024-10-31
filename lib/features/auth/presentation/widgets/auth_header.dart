@@ -1,3 +1,4 @@
+import 'package:flavor_ferry/core/constants/spacing_constants/spacing_constants.dart';
 import 'package:flutter/material.dart';
 
 class AuthHeader extends StatelessWidget {
@@ -22,6 +23,7 @@ class AuthHeader extends StatelessWidget {
           titleText,
           style: textTheme.titleLarge,
         ),
+        SizedBox(height: SpacingConstants.titleInstructionSpacingVertical),
         Text(
           instructionText,
           style: textTheme.titleMedium,

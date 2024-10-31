@@ -1,8 +1,7 @@
-import 'package:flavor_ferry/core/utils/size_config.dart';
+import 'package:flavor_ferry/core/constants/spacing_constants/spacing_constants.dart';
 import 'package:flavor_ferry/features/auth/presentation/widgets/or_divider.dart';
 import 'package:flavor_ferry/features/auth/presentation/widgets/social_media_widget.dart';
-import 'package:flavor_ferry/theme/app_colors/dark_shade_app_colors.dart';
-import 'package:flavor_ferry/theme/app_colors/light_shade_app_colors.dart';
+import 'package:flavor_ferry/theme/app_colors/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -30,15 +29,16 @@ class AuthFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (onTapForgotPassword != null) _buildForgotPasswordButton(),
-        SizedBox(height: SizeConfig.screenHeight! * 0.02),
+        if (onTapForgotPassword != null && forgotPasswordText != null)
+          _buildForgotPasswordButton(),
+        SizedBox(height: SpacingConstants.smallVertical),
         const OrDivider(),
-        SizedBox(height: SizeConfig.screenHeight! * 0.02),
+        SizedBox(height: SpacingConstants.smallVertical),
         SocialMediaWidget(
           onTapFacebookIcon: onTapFacebookIcon,
           onTapGoogleIcon: onTapGoogleIcon,
         ),
-        SizedBox(height: SizeConfig.screenHeight! * 0.04),
+        SizedBox(height: SpacingConstants.largeVertical),
         _buildAccountSection(context),
       ],
     );
@@ -56,23 +56,16 @@ class AuthFooter extends StatelessWidget {
 
   Widget _buildAccountSection(BuildContext context) {
     final TextTheme texTheme = Theme.of(context).textTheme;
-    final bool isBrightness = Theme.of(context).brightness == Brightness.light;
     return Align(
       alignment: Alignment.center,
       child: RichText(
         text: TextSpan(
-          style: texTheme.bodyLarge?.copyWith(
-            color: isBrightness
-                ? LightShadeAppColors.accountTextColor
-                : DarkShadeAppColors.accountTextColor,
-          ),
+          style: texTheme.bodyLarge,
           children: [
             TextSpan(text: "$accountText\t"),
             TextSpan(
               style: texTheme.bodyLarge?.copyWith(
-                color: isBrightness
-                    ? LightShadeAppColors.actionTextColor
-                    : DarkShadeAppColors.actionTextColor,
+                color: AppColors.themeColor,
               ),
               text: actionText,
               recognizer: TapGestureRecognizer()..onTap = onTapActionText,

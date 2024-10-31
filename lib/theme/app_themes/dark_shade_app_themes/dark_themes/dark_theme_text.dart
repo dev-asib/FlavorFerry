@@ -8,9 +8,9 @@ class DarkThemeText {
       titleLarge:
           TextStyles.titleLargeTextTheme(color: DarkShadeAppColors.whiteColor),
       titleMedium:
-          TextStyles.titleLargeTextTheme(color: DarkShadeAppColors.greyColor),
+          TextStyles.titleMediumTextTheme(color: DarkShadeAppColors.greyColor),
       bodyLarge:
-          TextStyles.titleLargeTextTheme(color: DarkShadeAppColors.whiteColor),
+          TextStyles.bodyLargeTextTheme(color: DarkShadeAppColors.whiteColor),
     );
   }
 }

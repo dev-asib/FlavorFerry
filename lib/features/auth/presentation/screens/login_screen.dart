@@ -1,5 +1,6 @@
+import 'package:flavor_ferry/core/constants/padding_constants/padding_constants.dart';
+import 'package:flavor_ferry/core/constants/spacing_constants/login_spacing_constants.dart';
 import 'package:flavor_ferry/core/constants/string_constants/login_strings.dart';
-import 'package:flavor_ferry/core/utils/size_config.dart';
 import 'package:flavor_ferry/features/auth/application/auth_controllers/login_controller.dart';
 import 'package:flavor_ferry/features/auth/presentation/widgets/auth_footer.dart';
 import 'package:flavor_ferry/features/auth/presentation/widgets/auth_header.dart';
@@ -23,35 +24,37 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Padding(
-            padding: EdgeInsets.all(SizeConfig.screenWidth! * 0.06),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: SizeConfig.screenHeight! * 0.12),
-                const AuthHeader(
-                  titleText: LoginStrings.headerTitle,
-                  instructionText: LoginStrings.headerInstruction,
-                  encouragementText: LoginStrings.headerEncouragement,
-                ),
-                SizedBox(height: SizeConfig.screenHeight! * 0.03),
-                LoginForm(loginController: _loginController),
-                SizedBox(height: SizeConfig.screenHeight! * 0.02),
-                CustomButton(
-                  buttonText: LoginStrings.loginButtonText,
-                  onTap: _onTapLoginButton,
-                ),
-                SizedBox(height: SizeConfig.screenHeight! * 0.02),
-                AuthFooter(
-                  accountText: LoginStrings.accountText,
-                  actionText: LoginStrings.actionText,
-                  forgotPasswordText: LoginStrings.forgotPasswordText,
-                  onTapActionText: _onTapActionText,
-                  onTapFacebookIcon: _onTapFacebookIcon,
-                  onTapGoogleIcon: _onTapGoogleIcon,
-                  onTapForgotPassword: _onTapForgotPassword,
-                ),
-              ],
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(PaddingConstants.screenPaddingAll),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: LoginSpacingConstants.extraLargeVertical),
+                  const AuthHeader(
+                    titleText: LoginStrings.headerTitle,
+                    instructionText: LoginStrings.headerInstruction,
+                    encouragementText: LoginStrings.headerEncouragement,
+                  ),
+                  SizedBox(height: LoginSpacingConstants.mediumVertical),
+                  LoginForm(loginController: _loginController),
+                  SizedBox(height: LoginSpacingConstants.smallVertical),
+                  CustomButton(
+                    buttonText: LoginStrings.loginButtonText,
+                    onTap: _onTapLoginButton,
+                  ),
+                  SizedBox(height: LoginSpacingConstants.smallVertical),
+                  AuthFooter(
+                    accountText: LoginStrings.accountText,
+                    actionText: LoginStrings.actionText,
+                    forgotPasswordText: LoginStrings.forgotPasswordText,
+                    onTapActionText: _onTapActionText,
+                    onTapFacebookIcon: _onTapFacebookIcon,
+                    onTapGoogleIcon: _onTapGoogleIcon,
+                    onTapForgotPassword: _onTapForgotPassword,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
